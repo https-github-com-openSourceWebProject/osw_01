@@ -34,7 +34,7 @@ $("#upload").click(function () {
 
         var item = {
           제목: $("#title").val(),
-          가격: $("#price").val().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')+" 원",
+          가격: $("#price").val(),
           내용: $("#content").val(),
           날짜: dateFormat(NOWdate),
           이미지: url,
