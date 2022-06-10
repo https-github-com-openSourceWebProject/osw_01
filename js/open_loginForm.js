@@ -1,5 +1,6 @@
 function openForm() {
-  document.getElementById("myForm").style.display = "block";
+  const e = document.getElementById("myForm");
+  e.style.display = e.style.display != "none" ? "none" : "block";
 }
 
 function closeForm() {

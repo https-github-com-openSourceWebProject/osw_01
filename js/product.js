@@ -23,6 +23,6 @@ db.collection("product")
         }</p>
       </div>
       </div>`; // html을 만들어서
-      $(".container").append(template); // 해당 클래스에 넣어줄것
+      $(".item_list").append(template); // 해당 클래스에 넣어줄것
     });
   });
