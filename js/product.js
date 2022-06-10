@@ -15,7 +15,12 @@ db.collection("product")
         doc.data().제목
       } </a></h5>
         <p class="date">${doc.data().날짜}</p>
-        <p class="price">${doc.data().가격.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')+" 원"}</p>
+        <p class="price">${
+          doc
+            .data()
+            .가격.toString()
+            .replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "원"
+        }</p>
       </div>
       </div>`; // html을 만들어서
       $(".container").append(template); // 해당 클래스에 넣어줄것
