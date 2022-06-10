@@ -11783,7 +11783,7 @@ p {
   #mainNav.navbar-shrink {
     padding-top: 1rem;
     padding-bottom: 1rem;
-    color: white;
+    /* color: white; */
     background-color: #212529;
   }
   #mainNav.navbar-shrink .navbar-brand {
@@ -11986,14 +11986,17 @@ header.masthead {
   animation: tracking-in-contract 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) both;
 }
 header.masthead .masthead-subheading {
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   font-style: italic;
   line-height: 1.5rem;
   margin-bottom: 25px;
-  color: var(--bs-yellow);
-  font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  -webkit-text-stroke: 1px black;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  -webkit-animation: tracking-in-contract 1.5s
+    cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  animation: tracking-in-contract 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) both;
 }
 header.masthead .masthead-heading {
   font-size: 3.25rem;
@@ -12004,9 +12007,9 @@ header.masthead .masthead-heading {
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  -webkit-animation: tracking-in-contract 1.5s
-    cubic-bezier(0.215, 0.61, 0.355, 1) both;
-  animation: tracking-in-contract 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  -webkit-animation: tracking-in-contract 2s cubic-bezier(0.215, 0.61, 0.355, 1)
+    both;
+  animation: tracking-in-contract 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
 }
 header.masthead a {
   -webkit-text-stroke: 0px;
@@ -12321,4 +12324,63 @@ header.masthead a {
   text-align: center;
   font-size: 0.9rem;
   font-family: "Anton", sans-serif;
+}
+
+.form-popup {
+  font-family: "Courier New", Courier, monospace;
+  display: none;
+  position: fixed;
+  top: 80px;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type="email"],
+.form-container input[type="password"] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type="email"]:focus,
+.form-container input[type="password"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #04aa6d;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover,
+.open-button:hover {
+  opacity: 1;
+}
+
+#btn-logout {
+  display: none;
 }

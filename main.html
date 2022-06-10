@@ -19,31 +19,31 @@
       rel="stylesheet"
       type="text/css"
     />
-
-    <!-- <link
+    <link
       href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700"
       rel="stylesheet"
       type="text/css"
-    /> -->
-    <link href="css/main_styles.css" rel="stylesheet" />
+    />
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Jua&family=Square+Peg&family=Water+Brush&family=Yanone+Kaffeesatz:wght@700&display=swap"
+    rel="stylesheet"
+  />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Jua&family=Square+Peg&family=Water+Brush&family=Yanone+Kaffeesatz:wght@700&display=swap"
-      rel="stylesheet"
-    />
+ 
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"
     ></script>
-    <script src="./js/scroll.js"></script>
+    <link href="css/main_styles.css" rel="stylesheet" />
   </head>
   <body id="page-top">
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
@@ -75,14 +75,56 @@
               <a class="nav-link" href="#about">커뮤니티</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./login.html">로그인</a>
-            </li>
+              <input
+                class="btn btn-primary"
+                type="button"
+                id="btn-login"
+                value="로그인"
+                onclick="openForm()"
+              />
+              <input
+                class="btn btn-primary"
+                type="button"
+                id="btn-logout"
+                value="로그아웃"
+              />
+              <div class="form-popup" id="myForm">
+                <form action="/action_page.php" class="form-container">
+                  <h1>로그인</h1>
+                  <label for="email"><b>아이디</b></label>
+                  <input
+                    type="email"
+                    placeholder="Enter ID"
+                    name="email"
+                    id="email"
+                    required
+                  />
+                  <label for="psw"><b>비밀번호</b></label>
+                  <input
+                    type="password"
+                    placeholder="Enter Password"
+                    name="psw"
+                    id="pw"
+                    required
+                  />
+                  <input type="button" class="btn" id="login" value="로그인"></button>
+                  <button
+                    type="button"
+                    class="btn cancel"
+                    onclick="closeForm()"
+                  >
+                    Close
+                  </button>
+                </form>
+              </div>
+            </li>`
           </ul>
         </div>
       </div>
     </nav>
     <header class="masthead">
       <div class="container">
+        <div class="masthead-subheading text-uppercase">CBNU</div>
         <div class="masthead-heading text-uppercase">Flea Market</div>
       </div>
     </header>
@@ -760,6 +802,9 @@
       firebase.initializeApp(firebaseConfig);
     </script>
     <script src="./js/login.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="./js/navbar.js"></script>
+    <script src="./js/scroll.js"></script>
+    <script src="./js/open_loginForm.js">
+    </script>
   </body>
 </html>

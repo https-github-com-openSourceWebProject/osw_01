@@ -30,4 +30,5 @@ $("#btn-logout").click(function () {
   localStorage.removeItem("userName");
   window.location.href = "./main.html";
   localStorage.setItem("flag", "false");
+  $("#btn-logout").css("display", "none");
 });
