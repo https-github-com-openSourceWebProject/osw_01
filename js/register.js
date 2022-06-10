@@ -11,7 +11,7 @@ $("#register").click(() => {
     .createUserWithEmailAndPassword(email, password)
     .then((result) => {
       result.user.updateProfile({ displayName: name });
-      console.log(result);
-      console.log(result.user);
+      alert("회원가입이 완료되었습니다.");
+      window.location.href = "./main.html";
     });
 });

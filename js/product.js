@@ -11,10 +11,11 @@ db.collection("product")
         doc.data().이미지
       }')"></div>
       <div class="flex-grow-1 p-4">
-        <h5 class="title">${doc.data().제목}</h5>
+        <h5 class="title"><a href="/detail.html?id=${doc.id}"> ${
+        doc.data().제목
+      } </a></h5>
         <p class="date">${doc.data().날짜}</p>
         <p class="price">${doc.data().가격}</p>
-        <p class="float-end">0</p>
       </div>
       </div>`; // html을 만들어서
       $(".container").append(template); // 해당 클래스에 넣어줄것
