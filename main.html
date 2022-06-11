@@ -24,67 +24,28 @@
       rel="stylesheet"
       type="text/css"
     />
-    <link href="css/main_styles.css" rel="stylesheet" />
-    <link href="css/style.css" rel="stylesheet" />
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Jua&family=Square+Peg&family=Water+Brush&family=Yanone+Kaffeesatz:wght@700&display=swap"
+    rel="stylesheet"
+  />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+ 
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"
     ></script>
+    <link href="css/main_styles.css" rel="stylesheet" />
   </head>
   <body id="page-top">
-    <nav class="navbar navbar-expand-lg bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="./main.html"
-          ><img src="assets/img/logo.png" alt="..."
-        /></a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="./main.html"
-                >메인페이지</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./product.html">게시물보기</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">공지사항</a>
-            </li>
-            <li class="nav-item">
-              <a class="btn btn-primary" href="./login.html" id="btn-login"
-                >로그인</a
-              >
-              <a
-                type="button"
-                class="btn btn-primary"
-                style="display: none"
-                id="btn-logout"
-                >로그아웃</a
-              >
-            </li>
-            <li class="nav-item" id="userName"></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
         <a class="navbar-brand" href="#page-top"
@@ -113,19 +74,105 @@
             <li class="nav-item">
               <a class="nav-link" href="#about">커뮤니티</a>
             </li>
+            <li class="nav-item">
+              <input
+                class="btn btn-primary"
+                type="button"
+                id="btn-login"
+                value="로그인"
+                onclick="openLoginForm()"
+              />
+              <div class="form-popup" id="myForm_login">
+                <form action="/action_page.php" class="form-container">
+                  <h1>로그인</h1>
+                  <label for="email"><b>아이디</b></label>
+                  <input
+                    type="email"
+                    placeholder="Enter ID"
+                    name="email"
+                    id="email"
+                    required
+                  />
+                  <label for="psw"><b>비밀번호</b></label>
+                  <input
+                    type="password"
+                    placeholder="Enter Password"
+                    name="psw"
+                    id="pw"
+                    required
+                  />
+                  <input type="button" class="btn" id="login" value="로그인"></button>
+                  <button
+                    type="button"
+                    class="btn cancel"
+                    onclick="closeLoginForm()"
+                  >
+                    Close
+                  </button>
+                </form>
+              </div>
+              <input
+                class="btn btn-primary"
+                type="button"
+                id="btn-logout"
+                value="로그아웃"
+              />
+              <input
+                class="btn btn-primary"
+                type="button"
+                id="btn-register"
+                value="회원가입"
+                onclick="openRegisterForm()"
+              />
+              <div class="form-popup" id="myForm_register">
+                <form action="/action_page.php" class="form-container">
+                  <h1>회원가입</h1>
+                  <label for="name-new"><b>이름</b></label>
+                  <input
+                    type="text"
+                    placeholder="Enter Name"
+                    name="name"
+                    id="name-new"
+                    required
+                  />
+                  <label for="email-new"><b>아이디</b></label>
+                  <input
+                    type="email"
+                    placeholder="Enter ID"
+                    name="email"
+                    id="email-new"
+                    required
+                  />
+                  <label for="pw-new"><b>비밀번호</b></label>
+                  <input
+                    type="password"
+                    placeholder="Enter Password"
+                    name="psw"
+                    id="pw-new"
+                    required
+                  />
+                  <input type="button" class="btn" id="register" value="회원가입"></button>
+                  <button
+                    type="button"
+                    class="btn cancel"
+                    onclick="closeRegisterForm()"
+                  >
+                    Close
+                  </button>
+                </form>
+              </div>
+              
+              
+            </li>
           </ul>
         </div>
       </div>
     </nav>
+    
     <header class="masthead">
       <div class="container">
-        <div class="masthead-subheading">Welcome To CBMP!</div>
-        <div class="masthead-heading text-uppercase">
-          자취생들을 위한 <br />플리마켓!
-        </div>
-        <a class="btn btn-primary btn-xl text-uppercase" href="#services"
-          >둘러보기</a
-        >
+        <div class="masthead-subheading text-uppercase">CBNU</div>
+        <div class="masthead-heading text-uppercase">Flea Market</div>
       </div>
     </header>
     <section class="page-section" id="services">
@@ -137,7 +184,7 @@
           </h3>
         </div>
         <div class="row text-center">
-          <div class="col-md-4">
+          <div class="col-md-6">
             <span class="fa-stack fa-4x">
               <i class="fas fa-circle fa-stack-2x text-primary"></i>
               <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
@@ -149,7 +196,7 @@
               가능해요!
             </p>
           </div>
-          <div class="col-md-4" style="text-align: center">
+          <div class="col-md-6" style="text-align: center">
             <span class="fa-stack fa-4x">
               <i class="fas fa-circle fa-stack-2x text-primary"></i>
               <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
@@ -159,14 +206,6 @@
               우리 동네에 무슨 가게들이 있을까 서로 정보를 공유할 수 있는
               공간이에요
             </p>
-          </div>
-          <div class="col-md-4">
-            <span class="fa-stack fa-4x">
-              <i class="fas fa-circle fa-stack-2x text-primary"></i>
-              <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
-            </span>
-            <h4 class="my-3">Web Security</h4>
-            <p class="text-muted">text</p>
           </div>
         </div>
       </div>
@@ -178,6 +217,7 @@
           <h3 class="section-subheading text-muted">
             우리 동네에는 어떤 물품들이 올라왔을까요?
           </h3>
+          <a type="button" class="btn btn-primary" href="./product.html">둘러보기</a>
         </div>
         <div class="row">
           <div class="col-lg-4 col-sm-6 mb-4">
@@ -411,11 +451,8 @@
     </section>
     <footer class="footer py-4">
       <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-4 text-lg-start">
-            Copyright &copy; Your Website 2022
-          </div>
-          <div class="col-lg-4 my-3 my-lg-0">
+        <div class="row">
+          <div class="col-lg-12 my-3 my-lg-0">
             <a
               class="btn btn-dark btn-social mx-2"
               href="#!"
@@ -434,12 +471,6 @@
               aria-label="LinkedIn"
               ><i class="fab fa-linkedin-in"></i
             ></a>
-          </div>
-          <div class="col-lg-4 text-lg-end">
-            <a class="link-dark text-decoration-none me-3" href="#!"
-              >Privacy Policy</a
-            >
-            <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
           </div>
         </div>
       </div>
@@ -787,7 +818,6 @@
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/scripts.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
@@ -820,5 +850,10 @@
       firebase.initializeApp(firebaseConfig);
     </script>
     <script src="./js/login.js"></script>
+    <script src="./js/register.js"></script>
+    <script src="./js/navbar.js"></script>
+    <script src="./js/scroll.js"></script>
+    <script src="./js/open_loginForm.js"></script>
+    <script src="./js/open_RegisterForm.js"></script>
   </body>
 </html>

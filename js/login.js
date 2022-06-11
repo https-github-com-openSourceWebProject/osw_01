@@ -8,8 +8,6 @@ firebase.auth().onAuthStateChanged((user) => {
 if (localStorage.getItem("flag") == "success") {
   $("#btn-login").css("display", "none");
   $("#btn-logout").css("display", "inline");
-  var user = localStorage.getItem("userName");
-  $("#userName").html(JSON.parse(user).displayName);
 }
 
 $("#login").click(function () {
@@ -30,4 +28,5 @@ $("#btn-logout").click(function () {
   localStorage.removeItem("userName");
   window.location.href = "./main.html";
   localStorage.setItem("flag", "false");
+  $("#btn-logout").css("display", "none");
 });

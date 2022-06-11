@@ -1,10 +1,7 @@
-const db = firebase.firestore();
-const storage = firebase.storage();
-
 $("#register").click(() => {
+  var name = $("#name-new").val();
   var email = $("#email-new").val();
   var password = $("#pw-new").val();
-  var name = $("#name-new").val();
 
   firebase
     .auth()
