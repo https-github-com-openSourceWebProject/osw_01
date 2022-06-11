@@ -7656,7 +7656,7 @@ fieldset:disabled .btn {
 }
 
 .mt-3 {
-  margin-top: 1rem !important;
+  margin-top: 6rem !important;
 }
 
 .mt-4 {
@@ -11698,7 +11698,11 @@ p {
   font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
+}
+
+.page-section a[tpye="button"] {
+  margin-bottom: 2rem;
 }
 
 @media (min-width: 768px) {
