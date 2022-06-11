@@ -78,7 +78,7 @@
         style="background-image: url('https://placeimg.com/640/380/tech')"
       ></div>
       <div>
-        <h5>올린사람 : 모름</h5>
+        <h5 class="name">올린사람 : 모름</h5>
         <hr />
         <h5 class="title">지금 url에 기록된 id를 가진 게시물의 상품명</h5>
         <p class="date">올린날짜</p>
@@ -117,6 +117,7 @@
         .then((result) => {
           console.log(result.data());
           $(".title").html(result.data().제목); //제목정보 불러오기
+          $(".date").html(result.data().날짜); //날짜정보 불러오기
           $(".price").html(result.data().가격); //가격정보 불러오기
           $(".detail-pic").css(
             "background-image",
