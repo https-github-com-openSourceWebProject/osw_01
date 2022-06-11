@@ -6,8 +6,7 @@ db.collection("product")
     result.forEach((doc) => {
       console.log(doc.data());
       //디브를 동적으로 만들어서 출력할수 있음!!
-      var template = `<div class="product">
-      <div class="thumbnail" style="background-image: url('${
+      var template = `<div class="product"><div class="thumbnail" style="background-image: url('${
         doc.data().이미지
       }')"></div>
       <div class="flex-grow-1 p-4">
