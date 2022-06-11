@@ -27,7 +27,7 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand" href="./main.html"
+        <a class="navbar-brand" href="#page-top"
           ><img src="assets/img/logo.png" alt="..."
         /></a>
         <button
@@ -61,16 +61,9 @@
                 value="로그인"
                 onclick="openForm()"
               />
-              <input
-                class="btn btn-primary"
-                type="button"
-                id="btn-logout"
-                value="로그아웃"
-              />
               <div class="form-popup" id="myForm">
                 <form action="/action_page.php" class="form-container">
                   <h1>로그인</h1>
-
                   <label for="email"><b>아이디</b></label>
                   <input
                     type="email"
@@ -79,7 +72,6 @@
                     id="email"
                     required
                   />
-
                   <label for="psw"><b>비밀번호</b></label>
                   <input
                     type="password"
@@ -89,6 +81,7 @@
                     required
                   />
                   <input type="button" class="btn" id="login" value="로그인"></button>
+                  <a type="button" class="btn" id="login" href="./register.html">회원가입</a>
                   <button
                     type="button"
                     class="btn cancel"
@@ -98,6 +91,50 @@
                   </button>
                 </form>
               </div>
+              <input
+                class="btn btn-primary"
+                type="button"
+                id="btn-login"
+                value="회원가입"
+                onclick="openForm()"
+              />
+              <div class="form-popup" id="myForm">
+                <form action="/action_page.php" class="form-container">
+                  <h1>회원가입</h1>
+                  <label for="email"><b>아이디</b></label>
+                  <input
+                    type="email"
+                    placeholder="Enter ID"
+                    name="email"
+                    id="email"
+                    required
+                  />
+                  <label for="psw"><b>비밀번호</b></label>
+                  <input
+                    type="password"
+                    placeholder="Enter Password"
+                    name="psw"
+                    id="pw"
+                    required
+                  />
+                  <input type="button" class="btn" id="login" value="로그인"></button>
+                  <a type="button" class="btn" id="login" href="./register.html">회원가입</a>
+                  <button
+                    type="button"
+                    class="btn cancel"
+                    onclick="closeForm()"
+                  >
+                    Close
+                  </button>
+                </form>
+              </div>
+              <input
+                class="btn btn-primary"
+                type="button"
+                id="btn-logout"
+                value="로그아웃"
+              />
+              
             </li>
           </ul>
         </div>
