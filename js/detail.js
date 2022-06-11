@@ -9,6 +9,7 @@ db.collection("product")
     console.log(result.data());
     $(".title").html(result.data().제목); //제목정보 불러오기
     $(".price").html(result.data().가격); //가격정보 불러오기
+    $(".date").html(result.data().날짜); //가격정보 불러오기
     $(".detail-pic").css("background-image", `url(${result.data().이미지})`); //이미지 정보 불러오기
   });
 
