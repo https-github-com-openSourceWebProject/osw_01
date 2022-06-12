@@ -12389,3 +12389,8 @@ header.masthead a {
 #btn-logout {
   display: none;
 }
+
+#main_produt img {
+  width: 300px;
+  height: 300px;
+}
