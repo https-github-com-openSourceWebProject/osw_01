@@ -4201,6 +4201,7 @@ fieldset:disabled .btn {
 }
 
 .nav-link {
+  font-family: "Jua", sans-serif;
   display: block;
   padding: 0.5rem 1rem;
   color: #ffc800;
@@ -4299,6 +4300,7 @@ fieldset:disabled .btn {
   justify-content: space-between;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+  font-family: "Jua", sans-serif;
 }
 .navbar > .container,
 .navbar > .container-fluid,
@@ -11756,9 +11758,6 @@ p {
   height: 1.5rem;
 }
 #mainNav .navbar-nav .nav-item .nav-link {
-  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 0.95rem;
   color: var(--bs-gray);
   letter-spacing: 0.0625em;
