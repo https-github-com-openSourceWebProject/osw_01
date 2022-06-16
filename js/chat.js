@@ -49,7 +49,6 @@ dbchat
               console.log(a.data());
 
               if (a.uid == 내uid) {
-                console.log("22");
                 var 템플릿 = `<li><span class="chat-box mine">${
                   // 채팅 메세지 가져옴
                   a.data().content
