@@ -16,6 +16,7 @@ $("#send").click(function () {
     .doc(채팅방id)
     .collection("messages")
     .add(데이터);
+  $("#chat-input").val("");
 });
 
 dbchat
