@@ -1,7 +1,9 @@
 const db = firebase.firestore();
 const storage = firebase.storage();
 
-var myUid = JSON.parse(localStorage.getItem("user")).uid; // user db에서 uid 추출
+if (localStorage.getItem("flag") == "success") {
+  var myUid = JSON.parse(localStorage.getItem("user")).uid; // user db에서 uid 추출
+}
 var sellerUid = "";
 var 상품명;
 
