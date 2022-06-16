@@ -1,16 +1,7 @@
-<<<<<<< HEAD
-/* body {
-  height: 100vh;
-  background-image: url("/assets/img/white-cube-pattern-4k-bu.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-} */
-
-=======
 * {
   font-family: "Jua", sans-serif;
 }
->>>>>>> d63a49523399bb2b1339c6007b2cbb0654d004b7
+
 .chat-content {
   height: 450px;
   overflow-y: scroll;
