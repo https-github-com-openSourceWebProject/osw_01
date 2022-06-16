@@ -15,9 +15,8 @@ $("#register").click(() => {
         password: password,
         displayName: name,
       };
-
       dbReg.collection("user").add(userInfo);
-      result.user.updateProfile({ displayName: name });
       alert("회원가입이 완료되었습니다.");
+      window.location.reload();
     });
 });
