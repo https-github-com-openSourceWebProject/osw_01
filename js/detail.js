@@ -2,9 +2,9 @@ const db = firebase.firestore();
 const storage = firebase.storage();
 
 if (localStorage.getItem("flag") == "success") {
-  var myUid = JSON.parse(localStorage.getItem("user")).uid; // user db에서 uid 추출
+  var 내uid = JSON.parse(localStorage.getItem("user")).uid; // user db에서 uid 추출
 }
-var sellerUid = "";
+var 판매자uid = "";
 var 상품명;
 var 쿼리스트링 = new URLSearchParams(window.location.search); //DB에 저장된 상품 정보
 
@@ -16,7 +16,7 @@ db.collection("product")
 
     $(".author").html("올린사람 : " + result.data().이름); // 상세정보에 올린사람 표기
 
-    sellerUid = result.data().uid;
+    판매자uid = result.data().uid;
     상품명 = result.data().제목;
 
     $(".title").html(result.data().제목); //제목정보 불러오기
@@ -24,7 +24,7 @@ db.collection("product")
     $(".date").html(result.data().날짜); //가격정보 불러오기
     $(".detail-pic").css("background-image", `url(${result.data().이미지})`); //이미지 정보 불러오기
 
-    if (String(myUid) != sellerUid) {
+    if (String(내uid) != 판매자uid) {
       $("#edit").css("display", "none");
     } else {
       $("#edit").css("display", "inline");
@@ -41,8 +41,8 @@ $("#chat").click(function () {
 
   var 데이터 = {
     who: [내uid, 판매자uid],
-    from: myUid,
-    to: sellerUid,
+    from: 내uid,
+    to: 판매자uid,
     product: 상품명,
     date: new Date(),
   };
