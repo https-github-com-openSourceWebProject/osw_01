@@ -1,6 +1,6 @@
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
-    localStorage.setItem("userName", JSON.stringify(user));
+    localStorage.setItem("user", JSON.stringify(user));
     localStorage.setItem("flag", "success");
   }
 });
@@ -19,15 +19,15 @@ $("#login").click(function () {
     .auth()
     .signInWithEmailAndPassword(email, password)
     .then(() => {
-      console.log("success");
-      window.location.href = "./main.html";
+      console.log("login success");
+      window.location.reload();
     });
 });
 
 $("#btn-logout").click(function () {
   firebase.auth().signOut();
   localStorage.removeItem("userName");
-  window.location.href = "./main.html";
   localStorage.setItem("flag", "false");
   $("#btn-logout").css("display", "none");
+  window.location.reload();
 });

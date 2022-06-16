@@ -8,7 +8,7 @@ $("#register").click(() => {
   firebase
     .auth()
     .createUserWithEmailAndPassword(email, password)
-    .then(() => {
+    .then((result) => {
       var userInfo = {
         name: name,
         email: email,
@@ -16,8 +16,7 @@ $("#register").click(() => {
       };
 
       dbReg.collection("user").add(userInfo);
-
-      // result.user.updateProfile({ displayName: name });
+      result.user.updateProfile({ displayName: name });
       alert("회원가입이 완료되었습니다.");
     });
 });
