@@ -14,14 +14,15 @@ db.collection("product")
   .then((result) => {
     console.log(result.data());
 
-    $(".author").html("올린사람 : " + result.data().이름); // 상세정보에 올린사람 표기
+    $(".author").html("작성자 : " + result.data().이름); // 상세정보에 올린사람 표기
 
     판매자uid = result.data().uid;
     상품명 = result.data().제목;
 
     $(".title").html(result.data().제목); //제목정보 불러오기
-    $(".price").html(result.data().가격); //가격정보 불러오기
-    $(".date").html(result.data().날짜); //가격정보 불러오기
+    $(".price").html("가격 : " + result.data().가격 + "원"); //가격정보 불러오기
+    $(".date").html(result.data().날짜); //날짜정보 불러오기
+    $(".content").html(result.data().내용); //내용정보 불러오기
     $(".detail-pic").css("background-image", `url(${result.data().이미지})`); //이미지 정보 불러오기
 
     if (String(내uid) != 판매자uid) {
@@ -47,6 +48,8 @@ $("#chat").click(function () {
     product: 상품명,
     date: new Date(),
   };
+
   db.collection("chatroom").add(데이터);
+
   setTimeout(() => (window.location.href = "./chat.html"), 1000);
 });
