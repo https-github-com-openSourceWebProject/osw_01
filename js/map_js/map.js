@@ -58,7 +58,7 @@ function mapGenerator(name, la,lo){
     var contentString = [
         '<div>',
         '   <h5>'+name+'</h5><br>',
-        '   <a target="_blank" href="http://map.naver.com/search/청주 '+name+'" >네이버 지도 바로 가기</a>',
+        '   <a target="_blank" href="http://map.naver.com/search/청주 '+name+'" style="color: black;" >위치 자세히 보기</a>',
         '</div>'
     ].join('');
   }
