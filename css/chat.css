@@ -1,3 +1,6 @@
+* {
+  font-family: "Jua", sans-serif;
+}
 .chat-content {
   height: 450px;
   overflow-y: scroll;
