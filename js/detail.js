@@ -1,8 +1,8 @@
 const db = firebase.firestore();
 const storage = firebase.storage();
 
-var 내uid = JSON.parse(localStorage.getItem("user")).uid; // user db에서 uid 추출
-var 판매자uid = "";
+var myUid = JSON.parse(localStorage.getItem("user")).uid; // user db에서 uid 추출
+var sellerUid = "";
 var 상품명;
 
 var 쿼리스트링 = new URLSearchParams(window.location.search); //DB에 저장된 상품 정보
@@ -14,8 +14,10 @@ db.collection("product")
 
     $(".author").html("올린사람 : " + result.data().이름); // 상세정보에 올린사람 표기
 
-    판매자uid = result.data().uid;
+    sellerUid = result.data().uid;
     상품명 = result.data().제목;
+    console.log(myUid);
+    console.log(sellerUid);
     $(".title").html(result.data().제목); //제목정보 불러오기
     $(".price").html(result.data().가격); //가격정보 불러오기
     $(".date").html(result.data().날짜); //가격정보 불러오기
@@ -31,8 +33,8 @@ $("#chat").click(function () {
   // 채팅버튼을 눌렀을때 작동하는 함수
 
   var 데이터 = {
-    from: 내uid,
-    to: 판매자uid,
+    from: myUid,
+    to: sellerUid,
     product: 상품명,
     date: new Date(),
   };

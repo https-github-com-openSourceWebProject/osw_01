@@ -1,3 +1,5 @@
+var dbReg = firebase.firestore();
+
 $("#register").click(() => {
   var name = $("#name-new").val();
   var email = $("#email-new").val();
@@ -7,15 +9,14 @@ $("#register").click(() => {
     .auth()
     .createUserWithEmailAndPassword(email, password)
     .then((result) => {
-      var 유저정보 = {
-        name1: name,
-        email1: email,
+      var userInfo = {
+        name: name,
+        email: email,
+        password: password,
+        displayName: name,
       };
-
-      db.collection("user").doc(result.user.uid).set(유저정보);
-
-      result.user.updateProfile({ displayName: name });
+      dbReg.collection("user").add(userInfo);
       alert("회원가입이 완료되었습니다.");
-      window.location.href = "./main.html";
+      window.location.reload();
     });
 });
