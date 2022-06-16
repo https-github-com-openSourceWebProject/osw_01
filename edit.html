@@ -24,6 +24,11 @@
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"
     ></script>
+    <link
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Jua&family=Square+Peg&family=Water+Brush&family=Yanone+Kaffeesatz:wght@700&display=swap"
+    rel="stylesheet"
+  />
+    <link rel="stylesheet" href="./css/upload.css">
     <link rel="stylesheet" href="./css/main_styles.css" />
   </head>
   <body>
@@ -162,6 +167,13 @@
         id="price"
         placeholder="price"
       />
+      <ul style="padding-top: 50px; padding-left : 10px;">
+        <li class="upload_image">
+          이미지 등록
+          <input class="form-control mt-2" type="file" id="image"/>
+          <img src="" id="preview"/>
+        </li>
+      </ul>
       <button class="btn btn-danger mt-3" id="send">수정하기</button>
     </div>
 
@@ -228,12 +240,19 @@
           내용: $("#content").val(), //수정될 내용 데이터
           가격: $("#price").val(), //수정될 가격 데이터
         };
-        db.collection("product").doc(쿼리스트링.get("id")).update(바꿀거); //수정한 부분 수정
+        modify(바꿀거).then(window.location.href = "/detail.html?id=" + 쿼리스트링.get("id"));
+        
       });
+
+      async function modify(data) {
+        db.collection("product").doc(쿼리스트링.get("id")).update(data); //수정한 부분 수정
+      }
+
     </script>
     <script src="./js/login.js"></script>
     <script src="./js/open_loginForm.js"></script>
     <script src="./js/open_registerForm.js"></script>
     <script src="./js/navbar.js"></script>
+    <script src="./js/preview_image.js"></script>
   </body>
 </html>
