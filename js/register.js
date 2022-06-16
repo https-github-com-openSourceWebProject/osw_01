@@ -13,6 +13,7 @@ $("#register").click(() => {
         name: name,
         email: email,
         password: password,
+        displayName: name,
       };
 
       dbReg.collection("user").add(userInfo);
