@@ -1,5 +1,6 @@
 const db = firebase.firestore();
 number = 1;
+
 db.collection("product")
   .get()
   .then((result) => {

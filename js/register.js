@@ -8,16 +8,16 @@ $("#register").click(() => {
   firebase
     .auth()
     .createUserWithEmailAndPassword(email, password)
-    .then((result) => {
-      var 유저정보 = {
+    .then(() => {
+      var userInfo = {
         name: name,
         email: email,
         password: password,
       };
-      dbReg.collection("user").doc().set(유저정보);
+
+      dbReg.collection("user").add(userInfo);
 
       // result.user.updateProfile({ displayName: name });
       alert("회원가입이 완료되었습니다.");
-      window.location.href = "./main.html";
     });
 });
