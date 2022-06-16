@@ -1,10 +1,22 @@
+<<<<<<< HEAD
+/* body {
+  height: 100vh;
+  background-image: url("/assets/img/white-cube-pattern-4k-bu.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
+
+=======
 * {
   font-family: "Jua", sans-serif;
 }
+>>>>>>> d63a49523399bb2b1339c6007b2cbb0654d004b7
 .chat-content {
   height: 450px;
   overflow-y: scroll;
   padding: 10px;
+  border: 1px solid lightgray;
+  background-color: lightyellow;
 }
 .chat-content li {
   margin-top: 10px;
@@ -14,6 +26,11 @@
   color: gray;
   margin-bottom: 0;
 }
+.list-group-item {
+  width: 250px;
+  height: 70px;
+  background-color: lightyellow;
+}
 .chat-box {
   background: #eee;
   padding: 5px;
@@ -22,4 +39,10 @@
 }
 .mine {
   float: right;
+}
+
+#send {
+  font-size: 20px;
+  width: 80px;
+  height: 50px;
 }
