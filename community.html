@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/map_css/styles.css">
+
   <!--페이지 설명-->
   <meta name="description" content="충북대학교 주변 식당 찾아보기">
   <!--네이버 서치 어드바이저-->
@@ -13,8 +13,14 @@
   <meta property="og:title" content="CBMP - 씨비앰피">
   <meta property="og:description" content="충북대학교 주변 식당 찾아보기">
   <!--부가기능-->
-  <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=4sw4pxi6um&submodules=geocoder"></script>
+<script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
   <script src="https://kit.fontawesome.com/93299e9387.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=4sw4pxi6um&submodules=geocoder"></script>
+    <link rel="stylesheet" href="css/map_css/styles.css">
   <link rel="stylesheet" href="./css/main_styles.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Jua&family=Square+Peg&family=Water+Brush&family=Yanone+Kaffeesatz:wght@700&display=swap" rel="stylesheet"/>
 </head>
@@ -979,14 +985,35 @@
       </div>-->
     </main>
   </div>
-  <script src="js/map_js/filter.js"></script>
-  <script src="js/map_js/menubtn.js"></script>
-  <script src="js/map_js/map.js"></script>
-  <script src="js/map_js/isMobile.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+  <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyC4C5jIAH_dzNQzc-gSXLrfcyR7k0IUG2g",
+        authDomain: "cbmp-17038.firebaseapp.com",
+        databaseURL:
+          "https://cbmp-17038-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "cbmp-17038",
+        storageBucket: "cbmp-17038.appspot.com",
+        messagingSenderId: "742707500532",
+        appId: "1:742707500532:web:d7796138ddd0463832d5a1",
+      };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+
   <script src="./js/login.js"></script>
   <script src="./js/register.js"></script>
   <script src="./js/navbar.js"></script>
   <script src="./js/open_loginForm.js"></script>
   <script src="./js/open_RegisterForm.js"></script>
+  <script src="js/map_js/filter.js"></script>
+  <script src="js/map_js/menubtn.js"></script>
+  <script src="js/map_js/map.js"></script>
+  <script src="js/map_js/isMobile.js"></script>
+
 </body>
 </html>
