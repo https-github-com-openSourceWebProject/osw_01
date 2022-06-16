@@ -38,8 +38,8 @@ $("#upload").click(function () {
           내용: $("#content").val(),
           날짜: dateFormat(NOWdate),
           이미지: url,
-          uid : JSON.parse(localStorage.getItem('user')).uid,//현재유저의 uid
-          이름 : JSON.parse(localStorage.getItem('user')).displayName //유저의 이름
+          uid : JSON.parse(localStorage.getItem('user')).uid,//지금 로그인한 유저의 uid
+          이름 : JSON.parse(localStorage.getItem('user')).displayName //지금 로그인한 유저의저이름
         };
         db.collection("product")
           .add(item)

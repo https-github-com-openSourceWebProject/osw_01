@@ -24,7 +24,13 @@
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"
     ></script>
+    <link
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Jua&family=Square+Peg&family=Water+Brush&family=Yanone+Kaffeesatz:wght@700&display=swap"
+    rel="stylesheet"
+  />
     <link href="./css/main_styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/upload.css">
+    </style>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
@@ -145,25 +151,34 @@
       </div>
     </nav>
     <div class="container mt-3">
+      <h2 style="padding-bottom: 40px;">게시물 등록</h2>
       <input
         type="text"
         class="form-control mt-2"
         id="title"
-        placeholder="title"
+        placeholder="제목"
+        style="padding-bottom: 15px;"
       />
       <textarea
         class="form-control mt-2"
         id="content"
-        placeholder="contents"
+        placeholder="내용"
+        style="padding-bottom: 100px;"
       ></textarea>
       <input
         type="text"
         class="form-control mt-2"
         id="price"
-        placeholder="price"
+        placeholder="가격"
+        style="padding-bottom: 15px;"
       />
-      <input class="form-control mt-2" type="file" id="image" />
-      <button class="btn btn-danger mt-3" id="upload">올리기</button>
+      <ul style="padding-top: 50px; padding-left : 10px;">
+        <li class="upload_image">
+          이미지 등록
+          <input class="form-control mt-2" type="file" id="image"/>
+        </li>
+      </ul>
+      <button class="btn btn-warning mt-3" id="upload">올리기</button>
     </div>
 
     <script
