@@ -25,6 +25,11 @@ db.collection("product")
     $(".content").html(result.data().내용); //내용정보 불러오기
     $(".detail-pic").css("background-image", `url(${result.data().이미지})`); //이미지 정보 불러오기
 
+    if (localStorage.getItem("flag") == "false") {
+      $("#edit").css("display", "none");
+      $("#chat").css("display", "none");
+    }
+
     if (String(내uid) != 판매자uid) {
       $("#edit").css("display", "none");
     } else {
