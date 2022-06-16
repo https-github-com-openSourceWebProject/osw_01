@@ -32,7 +32,8 @@ body {
   background-color: lightyellow;
 }
 .chat-box {
-  background: #eee;
+  background: yellow;
+  color: black;
   padding: 5px;
   border-radius: 5px;
   float: left;
