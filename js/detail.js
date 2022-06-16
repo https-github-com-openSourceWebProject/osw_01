@@ -6,8 +6,8 @@ if (localStorage.getItem("flag") == "success") {
 }
 var sellerUid = "";
 var 상품명;
-
 var 쿼리스트링 = new URLSearchParams(window.location.search); //DB에 저장된 상품 정보
+
 db.collection("product")
   .doc(쿼리스트링.get("id"))
   .get()
@@ -18,12 +18,17 @@ db.collection("product")
 
     sellerUid = result.data().uid;
     상품명 = result.data().제목;
-    console.log(myUid);
-    console.log(sellerUid);
+
     $(".title").html(result.data().제목); //제목정보 불러오기
     $(".price").html(result.data().가격); //가격정보 불러오기
     $(".date").html(result.data().날짜); //가격정보 불러오기
     $(".detail-pic").css("background-image", `url(${result.data().이미지})`); //이미지 정보 불러오기
+
+    if (String(myUid) != sellerUid) {
+      $("#edit").css("display", "none");
+    } else {
+      $("#edit").css("display", "inline");
+    }
   });
 
 $("#edit").click(function () {
