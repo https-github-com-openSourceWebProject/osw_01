@@ -26,7 +26,7 @@ if (localStorage.getItem("flag") == "success") {
 
 $("#btn-logout").click(function () {
   firebase.auth().signOut();
-  localStorage.removeItem("user");
+  localStorage.setItem("user", "");
   localStorage.setItem("flag", "false");
   $("#btn-logout").css("display", "none");
   window.location.reload();

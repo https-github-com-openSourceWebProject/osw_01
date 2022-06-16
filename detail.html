@@ -20,6 +20,10 @@
       integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
       crossorigin="anonymous"
     />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Jua&family=Square+Peg&family=Water+Brush&family=Yanone+Kaffeesatz:wght@700&display=swap"
+    rel="stylesheet"
+  />
     <link rel="stylesheet" href="./css/detail.css" />
     <link rel="stylesheet" href="./css/main_styles.css" />
     <title>Document</title>
@@ -142,7 +146,7 @@
         </div>
       </div>
     </nav>
-    <div class="container mt-3">
+    <div class="container mt-3" id="item-info">
       <button class="btn btn-outline-secondary" id="edit">수정</button>
       <button class="btn btn-outline-secondary" id="chat">채팅</button>
       <div
@@ -150,7 +154,7 @@
         style="background-image: url('https://placeimg.com/640/380/tech')"
       ></div>
       <div>
-        <h5>올린사람 : 모름</h5>
+        <h5 class="author">올린사람 : 모름</h5>
         <hr />
         <h5 class="title">지금 url에 기록된 id를 가진 게시물의 상품명</h5>
         <p class="date">올린날짜</p>
@@ -177,7 +181,6 @@
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
     </script>
-
     <script src="./js/detail.js"></script>
     <script src="./js/login.js"></script>
     <script src="./js/open_loginForm.js"></script>
