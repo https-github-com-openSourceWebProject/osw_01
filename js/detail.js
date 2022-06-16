@@ -31,8 +31,7 @@ $("#chat").click(function () {
   // 채팅버튼을 눌렀을때 작동하는 함수
 
   var 데이터 = {
-    from: 내uid,
-    to: 판매자uid,
+    who: [내uid, 판매자uid],
     product: 상품명,
     date: new Date(),
   };
