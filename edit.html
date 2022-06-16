@@ -150,22 +150,26 @@
       </div>
     </nav>
     <div class="container mt-3">
+      <h2 style="padding-bottom: 40px;">게시물 수정</h2>
       <input
         type="text"
         class="form-control mt-2"
         id="title"
-        placeholder="title"
+        placeholder="제목"
+        style="padding-bottom: 15px;"
       />
       <textarea
         class="form-control mt-2"
         id="content"
-        placeholder="content"
+        placeholder="내용"
+        style="padding-bottom: 100px;"
       ></textarea>
       <input
         type="text"
         class="form-control mt-2"
         id="price"
-        placeholder="price"
+        placeholder="가격"
+        style="padding-bottom: 15px;"
       />
       <ul style="padding-top: 50px; padding-left : 10px;">
         <li class="upload_image">
@@ -174,7 +178,7 @@
           <img src="" id="preview"/>
         </li>
       </ul>
-      <button class="btn btn-danger mt-3" id="send">수정하기</button>
+      <button class="btn btn-primary mt-3" id="send">수정하기</button>
     </div>
 
     <script
@@ -240,14 +244,8 @@
           내용: $("#content").val(), //수정될 내용 데이터
           가격: $("#price").val(), //수정될 가격 데이터
         };
-        modify(바꿀거).then(window.location.href = "/detail.html?id=" + 쿼리스트링.get("id"));
-        
+        db.collection("product").doc(쿼리스트링.get("id")).update(바꿀거); //수정한 부분 수정
       });
-
-      async function modify(data) {
-        db.collection("product").doc(쿼리스트링.get("id")).update(data); //수정한 부분 수정
-      }
-
     </script>
     <script src="./js/login.js"></script>
     <script src="./js/open_loginForm.js"></script>
