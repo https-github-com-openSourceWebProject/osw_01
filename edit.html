@@ -245,6 +245,8 @@
           가격: $("#price").val(), //수정될 가격 데이터
         };
         db.collection("product").doc(쿼리스트링.get("id")).update(바꿀거); //수정한 부분 수정
+
+        setTimeout(() => window.location.href = "/detail.html?id=" + 쿼리스트링.get("id"), 1000);
       });
     </script>
     <script src="./js/login.js"></script>
