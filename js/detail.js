@@ -7,7 +7,7 @@ if (localStorage.getItem("flag") == "success") {
 var 판매자uid = "";
 var 상품명;
 var 쿼리스트링 = new URLSearchParams(window.location.search); //DB에 저장된 상품 정보
-
+var flag = 0;
 db.collection("product")
   .doc(쿼리스트링.get("id"))
   .get()
@@ -29,6 +29,7 @@ db.collection("product")
       $("#edit").css("display", "none");
     } else {
       $("#edit").css("display", "inline");
+      $("#chat").css("display", "none");
     }
   });
 
@@ -48,5 +49,9 @@ $("#chat").click(function () {
     date: new Date(),
   };
 
-  db.collection("chatroom").add(데이터);
+  chat().then((window.location.href = "/chat.html"));
 });
+
+async function chat() {
+  db.collection("chatroom").add(데이터);
+}

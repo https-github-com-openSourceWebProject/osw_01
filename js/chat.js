@@ -2,6 +2,7 @@ const dbchat = firebase.firestore();
 const storagea = firebase.storage();
 
 var 내uid = JSON.parse(localStorage.getItem("user")).uid;
+var userName = JSON.parse(localStorage.getItem("user")).displayName;
 var 채팅방id;
 $("#send").click(function () {
   var 데이터 = {
@@ -35,7 +36,8 @@ dbchat
 
         e.stopImmediatePropagation();
 
-        db.collection("chatroom")
+        dbchat
+          .collection("chatroom")
           .doc(채팅방id)
           .collection("messages")
           .orderBy("date")
@@ -44,11 +46,20 @@ dbchat
 
             $(".chat-content").html("");
             result.forEach((a) => {
-              //console.log(a.data());
+              console.log(a.data());
 
-              var 템플릿 = `<li><span class="chat-box">${
-                a.data().content
-              }</span></li>`;
+              if (a.uid == 내uid) {
+                console.log("22");
+                var 템플릿 = `<li><span class="chat-box mine">${
+                  // 채팅 메세지 가져옴
+                  a.data().content
+                }</span></li>`;
+              } else {
+                var 템플릿 = `<li><span class="chat-box">${
+                  // 채팅 메세지 가져옴
+                  a.data().content
+                }</span></li>`;
+              }
               $(".chat-content").append(템플릿);
             });
           });
