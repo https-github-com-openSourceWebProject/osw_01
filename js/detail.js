@@ -48,9 +48,7 @@ $("#chat").click(function () {
     date: new Date(),
   };
 
-  chat().then((window.location.href = "/chat.html"));
-});
-
-async function chat() {
   db.collection("chatroom").add(데이터);
-}
+
+  setTimeout(() => (window.location.href = "./chat.html"), 1000);
+});
