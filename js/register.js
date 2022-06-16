@@ -7,6 +7,13 @@ $("#register").click(() => {
     .auth()
     .createUserWithEmailAndPassword(email, password)
     .then((result) => {
+      var 유저정보 = {
+        name1: name,
+        email1: email,
+      };
+
+      db.collection("user").doc(result.user.uid).set(유저정보);
+
       result.user.updateProfile({ displayName: name });
       alert("회원가입이 완료되었습니다.");
       window.location.href = "./main.html";
