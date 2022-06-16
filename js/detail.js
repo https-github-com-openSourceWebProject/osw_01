@@ -47,10 +47,6 @@ $("#chat").click(function () {
     product: 상품명,
     date: new Date(),
   };
-
-  chat().then((window.location.href = "/chat.html"));
-});
-
-async function chat() {
   db.collection("chatroom").add(데이터);
-}
+  setTimeout(() => (window.location.href = "./chat.html"), 1000);
+});

@@ -46,10 +46,8 @@ dbchat
 
             $(".chat-content").html("");
             result.forEach((a) => {
-              console.log(a.data());
-
-              if (a.uid == 내uid) {
-                console.log("22");
+              console.log(a.id, 내uid);
+              if (a.data().uid == 내uid) {
                 var 템플릿 = `<li><span class="chat-box mine">${
                   // 채팅 메세지 가져옴
                   a.data().content
